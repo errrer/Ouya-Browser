@@ -1,0 +1,12 @@
+# Android build output
+.gradle/
+**/build/
+local.properties
+*.iml
+.idea/
+
+# Docker browser profile and local token
+remote-engine/.env
+remote-engine/profile/
+__pycache__/
+*.pyc

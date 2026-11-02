@@ -1,0 +1,17 @@
+services:
+  ouya-browser-engine:
+    build: .
+    container_name: ouya-browser-engine
+    restart: unless-stopped
+    ports:
+      - "8765:8765"
+    environment:
+      OUYA_HOST: 0.0.0.0
+      OUYA_PORT: 8765
+      OUYA_TOKEN: ${OUYA_TOKEN:?Set OUYA_TOKEN in .env before starting}
+      BROWSER_WIDTH: 1280
+      BROWSER_HEIGHT: 720
+      JPEG_QUALITY: 55
+    shm_size: "1gb"
+    volumes:
+      - ./profile:/app/profile
